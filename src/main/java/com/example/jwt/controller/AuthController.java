@@ -12,7 +12,7 @@ import com.example.jwt.repository.RoleRepository;
 import com.example.jwt.repository.UserRepository;
 import com.example.jwt.security.JwtAuthenticationFilter;
 import com.example.jwt.security.JwtTokenProvider;
-import org.springframework.beans.factory.annotation.Autowire;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
