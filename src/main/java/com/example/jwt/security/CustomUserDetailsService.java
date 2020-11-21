@@ -10,11 +10,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class CustomUserDetailsService implements UserDetailsService {
+public class CustomUserDetailsService implements UserDetailsService {// panggi di scurity config
 
     @Autowired
-    UserRepository userRepository;
+    UserRepository userRepository;// dari repo
 
+
+    //cari tentang metod ini
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String usernameOrEmail)

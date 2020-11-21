@@ -28,15 +28,17 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 )
 public class SecurityConfig extends WebSecurityConfigurerAdapter {// bikin role nya di sini
     @Autowired
-    CustomUserDetailsService customUserDetailsService;
+    CustomUserDetailsService customUserDetailsService;// kelas dari package payload
 
     @Autowired
-    private JwtAuthenticationEntryPoint unauthorizedHandler;
+    private JwtAuthenticationEntryPoint unauthorizedHandler;// kelas dari package payload
 
     @Bean
-    public JwtAuthenticationFilter jwtAuthenticationFilter() {
+    public JwtAuthenticationFilter jwtAuthenticationFilter() { //kelas menjadi metod
         return new JwtAuthenticationFilter();
     }
+
+    //bawaan java
     @Override
     public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder
@@ -44,17 +46,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {// bikin role 
                 .passwordEncoder(passwordEncoder());
     }
 
+    //bawaan
     @Bean(BeanIds.AUTHENTICATION_MANAGER)
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
 
+    //bawaan
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    //bawaan
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
